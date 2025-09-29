@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Anghely 💖</title>
+  <style>
+    /* Fondo con puntitos suaves */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(pink 0.8px, transparent 0.8px),
+                  radial-gradient(pink 0.8px, transparent 0.8px);
+      background-position: 0 0, 10px 10px;
+      background-size: 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', 'Segoe UI', cursive;
+    }
+
+    /* Texto superior */
+    .mensaje {
+      font-size: 2em;
+      color: #ff4d6d;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #fff;
+      animation: aparecer 2s ease forwards;
+    }
+
+    /* Estilo del corazón */
+    .corazon {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      transform: scale(1);
+      animation: latido 1s infinite ease-in-out;
+    }
+
+    .corazon::before,
+    .corazon::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 150px;
+      background: pink;
+      border-radius: 50px 50px 0 0;
+      top: 0;
+    }
+
+    .corazon::before {
+      left: 0;
+      transform: rotate(-45deg);
+      transform-origin: bottom right;
+    }
+
+    .corazon::after {
+      right: 0;
+      transform: rotate(45deg);
+      transform-origin: bottom left;
+    }
+
+    /* Animaciones */
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mensaje">💌 Te amo, Anghely 💌</div>
+  <div class="corazon"></div>
+
+</body>
+</html>
+
